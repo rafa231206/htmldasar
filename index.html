@@ -40,10 +40,10 @@
         html, body {
             height: 100%;
             display: flex;
-            flex-direction: column; /* Penting untuk scroll-snap atau full-height sections */
+            flex-direction: column;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Mencegah scroll default browser */
+            overflow: hidden; /* Mencegah scroll default browser */
             font-family: 'Fira Code', monospace;
             transition: all 0.3s ease;
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
@@ -57,8 +57,8 @@
             color: #e2e8f0;
             padding: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            position: relative; /* Agar z-index bekerja */
-            z-index: 1000; /* Pastikan header di atas konten */
+            position: relative;
+            z-index: 1000;
         }
         .header-gradient {
             background: linear-gradient(90deg, #667eea, #764ba2);
@@ -70,83 +70,164 @@
         /* Layout Utama */
         .main-layout {
             display: flex;
-            height: calc(100vh - 80px); /* Tinggi viewport dikurangi tinggi header */
-            overflow: hidden; /* Mencegah scroll layout utama */
+            flex-grow: 1; /* Mengisi sisa tinggi yang tersedia */
+            overflow: hidden;
         }
 
-        /* Sidebar */
+        /* Sidebar (Daftar Isi) */
         .sidebar {
-            flex: 0 0 280px; /* Lebar tetap untuk sidebar */
-            background-color: #2d3748;
-            padding: 1.5rem;
-            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.2);
-            overflow-y: auto; /* Scroll vertikal untuk sidebar jika kontennya panjang */
-            -webkit-overflow-scrolling: touch; /* Untuk smooth scrolling di iOS */
+            flex: 0 0 280px;
+            background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+            padding: 2rem 1.5rem;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             position: relative;
-            z-index: 900; /* Di atas konten utama tapi di bawah header */
+            z-index: 900;
+            border-right: 1px solid rgba(113, 119, 144, 0.2);
         }
         .sidebar a {
-            display: block;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.5rem;
-            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            border-radius: 0.75rem;
             color: #e2e8f0;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            transition: all 0.3s ease;
+            background: rgba(74, 85, 104, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            border-radius: 12px;
+            color: #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            background: rgba(74, 85, 104, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         .sidebar a:hover {
-            background-color: #4a5568;
+            background: rgba(74, 85, 104, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
         }
+
         .sidebar a.active {
-            background-color: #667eea;
-            font-weight: bold;
-            color: #ffffff;
+            background: linear-gradient(90deg, #7c3aed 0%, #6d28d9 100%);
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+            transform: scale(1.02);
+        }
+
+        .sidebar a.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: white;
+            border-radius: 5px 0 0 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
         }
 
         /* Konten Utama (Sections) */
         .main-content-wrapper {
             flex-grow: 1;
-            overflow: hidden; /* Penting untuk mengontrol scroll section */
+            overflow: hidden;
             position: relative;
+            display: flex; /* Menggunakan flexbox untuk menampung section */
+            justify-content: center; /* Pusatkan konten */
+            align-items: center; /* Pusatkan konten secara vertikal */
+            padding: 1rem; /* Padding di sekitar area konten */
         }
 
         .sections-container {
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            height: 100%; /* Mengisi tinggi wrapper */
-            transition: transform 0.5s ease-in-out; /* Animasi transisi antar section */
+            justify-content: center;
+            align-items: center;
         }
 
         .content-section {
-            flex-shrink: 0; /* Mencegah section menyusut */
-            width: 100%;
-            height: 100%; /* Setiap section mengambil tinggi penuh */
-            padding: 2rem;
-            box-sizing: border-box; /* Padding tidak menambah ukuran */
-            background-color: #2d3748; /* Latar belakang section */
-            border-radius: 0.75rem; /* Sudut membulat */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bayangan lebih menonjol */
-            margin: 0 auto; /* Pusatkan section */
-            overflow-y: auto; /* Scroll internal untuk konten section jika terlalu panjang */
+            flex-shrink: 0;
+            width: 95%;
+            height: 95%;
+            padding: 2.5rem;
+            box-sizing: border-box;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(26, 32, 44, 0.95));
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
             -webkit-overflow-scrolling: touch;
-            border: 1px solid #4a5568; /* Border konsisten */
+            border: 1px solid rgba(108, 122, 137, 0.2);
+            display: none;
+            backdrop-filter: blur(12px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: scale(0.95) translateY(20px);
+            opacity: 0;
+        }
+
+        .content-section.active {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .content-section.active {
+            display: block; /* Tampilkan section yang aktif */
         }
 
         /* Styling Umum untuk Konten */
         .section-title {
-            font-size: 2.25rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #667eea;
-            border-bottom: 2px solid #4a5568;
-            padding-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(90deg, #667eea, #9f7aea);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #9f7aea);
+            border-radius: 2px;
         }
         .code-block {
-            background-color: #1a202c; /* Lebih gelap dari section */
-            border-left: 4px solid #667eea;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            background-color: #1a1e2b;
+            border-left: 4px solid #9f7aea;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             overflow-x: auto;
-            border-radius: 0.375rem;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .code-block:hover {
+            transform: translateX(-3px);
+            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
         }
         .code-block code {
             font-family: 'Fira Code', monospace;
@@ -191,7 +272,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         form {
-            background-color: #1a202c; /* Lebih gelap dari section */
+            background-color: #1a202c;
             padding: 1.5rem;
             border-radius: 0.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -210,7 +291,7 @@
             width: 100%;
             padding: 0.75rem;
             margin-bottom: 1rem;
-            background-color: #2d3748; /* Lebih terang dari form background */
+            background-color: #2d3748;
             border: 1px solid #4a5568;
             border-radius: 0.375rem;
             color: #e2e8f0;
@@ -244,44 +325,79 @@
             color: #4fd1c5;
         }
 
-        /* Responsif untuk Mobile */
+        .back-to-toc-btn {
+            background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+        }
+
+        .back-to-toc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 70, 193, 0.4);
+            background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+        }
+
+        .back-to-toc-btn:active {
+            transform: translateY(0);
+        }
+
+        .back-to-toc-btn::before {
+            content: '←';
+            margin-right: 0.5rem;
+            font-size: 1.1em;
+        }
+
         @media (max-width: 768px) {
+
             header {
                 padding: 1rem;
                 text-align: center;
             }
             .header-gradient {
-                font-size: 1.5rem; /* Ukuran font lebih kecil di mobile */
+                font-size: 1.5rem;
             }
             .main-layout {
-                flex-direction: column; /* Sidebar di atas konten */
-                height: auto; /* Biarkan tinggi otomatis */
-            }
-            .sidebar {
-                flex: none; /* Hapus flex basis */
-                width: 100%; /* Sidebar penuh lebar */
-                max-height: 250px; /* Batasi tinggi sidebar di mobile */
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Bayangan di bawah sidebar */
-                border-radius: 0; /* Hapus border-radius di mobile */
-            }
-            .main-content-wrapper {
-                height: auto; /* Biarkan tinggi otomatis */
-            }
-            .sections-container {
-                /* Di mobile, kita tidak akan memaksakan satu section per tampilan secara ketat
-                   karena akan membuat pengalaman yang buruk. Biarkan scroll normal. */
-                transform: none !important; /* Nonaktifkan transform */
+                flex-direction: column;
                 height: auto;
             }
+            .sidebar {
+                flex: none;
+                width: 100%;
+                max-height: none;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+                background: linear-gradient(to bottom, #2d3748, #1a202c);
+                padding: 1.25rem;
+                transition: all 0.3s ease;
+            }
+            .main-content-wrapper {
+                height: calc(100vh - 80px - 1rem); /* Sesuaikan tinggi di mobile */
+                padding: 0.5rem;
+            }
             .content-section {
-                height: auto; /* Biarkan tinggi otomatis */
+                width: 100%;
+                height: 100%;
                 padding: 1rem;
-                margin-bottom: 1rem; /* Beri jarak antar section */
+                margin-bottom: 0; /* Tidak ada margin antar section karena hanya satu yang tampil */
                 border-radius: 0.5rem;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
             .section-title {
                 font-size: 1.75rem;
+            }
+            .sidebar.hidden-mobile {
+                display: none;
+            }
+            .main-content-wrapper.full-width-mobile {
+                width: 100%;
+                flex-grow: 1;
             }
         }
     </style>
@@ -290,34 +406,40 @@
 </head>
 <body>
 
-    <header>
-        <div class="container flex justify-center items-center">
-            <h1 class="text-3xl font-bold header-gradient">Dasar-Dasar HTML: Panduan Programmer</h1>
-            <!-- Menu di kanan atas dihapus -->
+    <header class="bg-gradient-to-r from-purple-900 to-blue-800 shadow-lg">
+        <div class="container mx-auto py-8 px-4 flex justify-center items-center">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 mb-2 animate-fade-in transition-all">
+                    HTML Dasar
+                </h1>
+                <p class="text-blue-100 text-lg mt-2 animate-fade-in delay-100">
+                    Panduan lengkap menguasai dasar HTML
+                </p>
+            </div>
         </div>
     </header>
 
     <div class="main-layout">
-        <!-- Navigasi Sidebar -->
-        <aside class="sidebar">
+        <!-- Navigasi Sidebar (Daftar Isi) -->
+        <aside class="sidebar" id="sidebar-toc">
             <h3 class="text-xl font-bold mb-4 text-white">Daftar Isi</h3>
             <ul>
-                <li><a href="#introduction" class="nav-link active">Pendahuluan HTML</a></li>
-                <li><a href="#text-formatting" class="nav-link">Format Teks</a></li>
-                <li><a href="#lists" class="nav-link">Daftar (List)</a></li>
-                <li><a href="#links" class="nav-link">Tautan (Link)</a></li>
-                <li><a href="#attributes" class="nav-link">Atribut HTML</a></li>
-                <li><a href="#tables" class="nav-link">Tabel</a></li>
-                <li><a href="#forms" class="nav-link">Formulir</a></li>
-                <li><a href="#images" class="nav-link">Gambar</a></li>
-                <li><a href="#video" class="nav-link">Video</a></li>
-                <li><a href="#audio" class="nav-link">Audio</a></li>
-                <li><a href="#multipage-example" class="nav-link">Contoh Multipage</a></li>
+                <li><a href="#" class="nav-link" data-target="introduction">Pendahuluan HTML</a></li>
+                <li><a href="#" class="nav-link" data-target="text-formatting">Format Teks</a></li>
+                <li><a href="#" class="nav-link" data-target="lists">Daftar (List)</a></li>
+                <li><a href="#" class="nav-link" data-target="links">Tautan (Link)</a></li>
+                <li><a href="#" class="nav-link" data-target="attributes">Atribut HTML</a></li>
+                <li><a href="#" class="nav-link" data-target="tables">Tabel</a></li>
+                <li><a href="#" class="nav-link" data-target="forms">Formulir</a></li>
+                <li><a href="#" class="nav-link" data-target="images">Gambar</a></li>
+                <li><a href="#" class="nav-link" data-target="video">Video</a></li>
+                <li><a href="#" class="nav-link" data-target="audio">Audio</a></li>
+                <li><a href="#" class="nav-link" data-target="multipage-example">Contoh Multipage</a></li>
             </ul>
         </aside>
 
         <!-- Area Konten Utama -->
-        <div class="main-content-wrapper">
+        <div class="main-content-wrapper" id="content-area">
             <div class="sections-container">
                 <section id="introduction" class="content-section">
                     <h2 class="section-title">1. Pendahuluan HTML</h2>
@@ -338,6 +460,7 @@
                     </div>
                     <p>Bagian <code>&lt;head&gt;</code> berisi meta-informasi tentang dokumen HTML, sedangkan bagian <code>&lt;body&gt;</code> berisi semua konten yang terlihat oleh pengguna.</p>
                     <a href="web/1. HTML.html" target="_blank" class="original-file-link">Lihat file asli: 1. HTML.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="text-formatting" class="content-section">
@@ -428,6 +551,7 @@
                     </div>
                     <a href="web/1. HTML.html" target="_blank" class="original-file-link">Lihat file asli: 1. HTML.html</a>
                     <a href="web/latihan/latihan 1.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 1.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="lists" class="content-section">
@@ -492,6 +616,7 @@
                         <dd>UNUJA adalah kampus yang ada di Pondok Pesantren Nurul Jadid.</dd>
                     </dl>
                     <a href="web/2. list.html" target="_blank" class="original-file-link">Lihat file asli: 2. list.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="links" class="content-section">
@@ -534,6 +659,7 @@
                     </div>
                     <a href="#" class="text-blue-400 hover:underline" onclick="alert('Ini akan menautkan ke latihan/latihan 1.html dalam skenario nyata'); return false;">Halaman dalam Folder "latihan" (Contoh)</a>
                     <a href="web/3. link.html" target="_blank" class="original-file-link">Lihat file asli: 3. link.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="attributes" class="content-section">
@@ -576,6 +702,7 @@
                         <pre><code>&lt;p&gt;Singkatan: &lt;abbr title="Sekolah Dasar"&gt;SD&lt;/abbr&gt;&lt;/p&gt;</code></pre>
                     </div>
                     <a href="web/4. atribute html.html" target="_blank" class="original-file-link">Lihat file asli: 4. atribute html.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="tables" class="content-section">
@@ -713,6 +840,7 @@
                         </tr>
                     </table>
                     <a href="web/5. tabel.html" target="_blank" class="original-file-link">Lihat file asli: 5. tabel.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="forms" class="content-section">
@@ -790,6 +918,7 @@
                         <input type="submit" value="Kirim">
                     </form>
                     <a href="web/6. form.html" target="_blank" class="original-file-link">Lihat file asli: 6. form.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="images" class="content-section">
@@ -822,6 +951,7 @@
                     </div>
                     <img src="web/img/media_social_tiktok_icon_124256.png" alt="Tiktok" width="100%">
                     <a href="web/7. images.html" target="_blank" class="original-file-link">Lihat file asli: 7. images.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="video" class="content-section">
@@ -850,6 +980,7 @@
                     </video>
                     <p class="text-sm text-gray-400">Catatan: Autoplay sering diblokir oleh browser untuk pengalaman pengguna. Teks "Browser Anda tidak mendukung tag video." muncul jika browser tidak dapat memutar video.</p>
                     <a href="web/8. video.html" target="_blank" class="original-file-link">Lihat file asli: 8. video.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="audio" class="content-section">
@@ -874,6 +1005,7 @@
                     </audio>
                     <p class="text-sm text-gray-400">Catatan: Autoplay mungkin diblokir. Teks "Browser Anda tidak mendukung elemen audio." muncul jika browser tidak dapat memutar audio.</p>
                     <a href="web/9. suara.html" target="_blank" class="original-file-link">Lihat file asli: 9. suara.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
 
                 <section id="multipage-example" class="content-section">
@@ -984,6 +1116,7 @@
                     </form>
                     <a href="web/latihan/latihan 2/kontak.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 2/kontak.html</a>
                     <a href="web/latihan/latihan 3/kontak.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 3/kontak.html</a>
+                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
                 </section>
             </div>
         </div>
@@ -997,77 +1130,56 @@
     </footer>
     <button id="installBtn" style="display: none;">Install Aplikasi</button>
     <script>
-        const sectionsContainer = document.querySelector('.sections-container');
+        const sidebarToc = document.getElementById('sidebar-toc');
+        const contentArea = document.getElementById('content-area');
         const navLinks = document.querySelectorAll('.nav-link');
         const contentSections = document.querySelectorAll('.content-section');
-        let currentSectionIndex = 0;
-        let isScrolling = false; // Flag untuk mencegah scroll ganda
 
-        // Fungsi untuk menggulir ke section tertentu
-        function scrollToSection(index) {
-            if (index < 0 || index >= contentSections.length) return;
-
-            isScrolling = true;
-            currentSectionIndex = index;
-            const offset = -index * 100; // Hitung offset dalam %
-            sectionsContainer.style.transform = `translateY(${offset}%)`;
-
-            // Update active class di sidebar
-            navLinks.forEach((link, i) => {
-                if (i === index) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
+        // Fungsi untuk menampilkan konten berdasarkan ID
+        function showContent(id) {
+            // Sembunyikan semua section konten
+            contentSections.forEach(section => {
+                section.classList.remove('active');
             });
 
-            // Setelah transisi selesai, reset flag
-            sectionsContainer.addEventListener('transitionend', () => {
-                isScrolling = false;
-            }, { once: true });
-        }
-
-        // Event listener untuk klik navigasi sidebar
-        navLinks.forEach((link, index) => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                scrollToSection(index);
-            });
-        });
-
-        // Event listener untuk scroll (hanya di desktop)
-        // Di mobile, kita akan membiarkan scroll normal
-        if (window.innerWidth > 768) {
-            window.addEventListener('wheel', (e) => {
-                if (isScrolling) return; // Jangan scroll jika sedang dalam transisi
-
-                e.preventDefault(); // Mencegah scroll default browser
-
-                if (e.deltaY > 0) { // Scroll ke bawah
-                    scrollToSection(currentSectionIndex + 1);
-                } else { // Scroll ke atas
-                    scrollToSection(currentSectionIndex - 1);
-                }
-            }, { passive: false }); // passive: false agar preventDefault() bekerja
-        }
-
-        // Inisialisasi tampilan awal
-        scrollToSection(0);
-
-        // Menyesuaikan tampilan saat resize (khususnya dari mobile ke desktop atau sebaliknya)
-        window.addEventListener('resize', () => {
-            if (window.innerWidth <= 768) {
-                // Di mobile, nonaktifkan scroll-snap behavior
-                sectionsContainer.style.transform = 'none';
-                document.body.style.overflow = 'auto'; // Izinkan scroll body di mobile
-            } else {
-                // Di desktop, aktifkan kembali scroll-snap behavior
-                document.body.style.overflow = 'hidden'; // Kunci scroll body
-                scrollToSection(currentSectionIndex); // Kembali ke section yang aktif
+            // Tampilkan section yang diminta
+            const targetSection = document.getElementById(id);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                // Sembunyikan sidebar dan buat area konten utama menjadi full-width
+                sidebarToc.classList.add('hidden-mobile');
+                contentArea.classList.add('full-width-mobile');
             }
+        }
+
+        // Fungsi untuk menampilkan daftar isi
+        function showTableOfContents() {
+            // Sembunyikan semua section konten
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Tampilkan sidebar dan kembalikan area konten utama ke lebar normal
+            sidebarToc.classList.remove('hidden-mobile');
+            contentArea.classList.remove('full-width-mobile');
+        }
+
+        // Event listener untuk setiap tautan navigasi
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Mencegah perilaku default tautan
+                const targetId = this.getAttribute('data-target');
+                showContent(targetId);
+            });
         });
-                // Daftarkan Service Worker untuk PWA
-                if ('serviceWorker' in navigator) {
+
+        // Inisialisasi: Pastikan hanya daftar isi yang terlihat saat pertama kali dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            showTableOfContents();
+        });
+
+        // PWA related code (tetap dipertahankan)
+        if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
             navigator.serviceWorker.register('service-worker.js')
               .then(registration => {
@@ -1084,7 +1196,6 @@
           e.preventDefault();
           deferredPrompt = e;
         
-          // Tampilkan tombol khusus jika mau
           const installBtn = document.getElementById('installBtn');
           installBtn.style.display = 'block';
         
