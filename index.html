@@ -43,7 +43,7 @@
             flex-direction: column;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Mencegah scroll default browser */
+            overflow-y: auto; /* Mencegah scroll default browser */
             font-family: 'Fira Code', monospace;
             transition: all 0.3s ease;
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
@@ -371,7 +371,7 @@
             .sidebar {
                 flex: none;
                 width: 100%;
-                max-height: none;
+                max-height: 67vh;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
                 background: linear-gradient(to bottom, #2d3748, #1a202c);
                 padding: 1.25rem;
