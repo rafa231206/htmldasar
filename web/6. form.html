@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM HTML</title>
+</head>
+<body>
+
+    <h2>Formulir Pendaftaran</h2>
+
+    <!-- Form dimulai -->
+    <form action="proses.php" method="post">
+        
+        <!-- Input teks nama depan -->
+        <label for="nama_depan">Nama Depan:</label>
+        <input type="text" id="nama_depan" name="nama_depan">
+        <br><br>
+
+        <!-- Input teks nama belakang -->
+        <label for="nama_belakang">Nama Belakang:</label>
+        <input type="text" id="nama_belakang" name="nama_belakang">
+        <br><br>
+
+        <!-- Input password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+
+        <!-- Radio button: Pilihan WNI -->
+        <h4>Apakah Anda WNI?</h4>
+        <input type="radio" id="wni_yes" name="wni" value="yes">
+        <label for="wni_yes">Ya</label><br>
+        <input type="radio" id="wni_no" name="wni" value="no">
+        <label for="wni_no">Tidak</label><br><br>
+
+        <!-- Checkbox: Musik favorit -->
+        <h4>Musik Favorit:</h4>
+        <input type="checkbox" id="musik_ndx" name="musik[]" value="NDX">
+        <label for="musik_ndx">NDX</label><br>
+        <input type="checkbox" id="musik_denny" name="musik[]" value="DENNY">
+        <label for="musik_denny">DENNY</label><br><br>
+
+        <!-- Dropdown list pekerjaan -->
+        <h4>Pilih Pekerjaan:</h4>
+        <select name="pekerjaan" id="pekerjaan">
+            <option value="mahasiswa">Mahasiswa</option>
+            <option value="pelajar">Pelajar</option>
+            <option value="karyawan">Karyawan</option>
+            <option value="lainnya">Lainnya</option>
+        </select>
+        <br><br>
+
+        <!-- Upload file -->
+        <h4>Upload Foto:</h4>
+        <input type="file" name="foto" id="foto">
+        <br><br>
+
+        <!-- Tombol submit -->
+        <input type="submit" value="Kirim">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Contoh Tabel HTML</title>
+</head>
+<body>
+
+    <!-- Judul halaman -->
+    <h1>Membuat Table</h1>
+
+    <!-- ===================== -->
+    <!-- Contoh tabel standar -->
+    <!-- ===================== -->
+    <h4>Tabel Standar (Tanpa Header)</h4>
+    <table border="1">
+        <!-- Baris pertama -->
+        <tr>
+            <td>Raihan</td>
+            <td>Farel</td>
+            <td>Akbar</td>
+        </tr>
+        <!-- Baris kedua -->
+        <tr>
+            <td>Yosowilangun</td>
+            <td>Lumajang</td>
+            <td>Darungan</td>
+        </tr>
+    </table>
+
+    <!-- ===================== -->
+    <!-- Tabel dengan header -->
+    <!-- ===================== -->
+    <h4>Tabel dengan Header (th)</h4>
+    <table border="2">
+        <tr>
+            <th>Senin</th>
+            <td>10.00</td>
+            <td>12.00</td>
+        </tr>
+        <tr>
+            <th>Selasa</th>
+            <td>10.00</td>
+            <td>12.00</td>
+        </tr>
+    </table>
+
+    <!-- Spasi antar bagian tabel -->
+    <br>
+
+    <!-- ====================================== -->
+    <!-- Contoh tabel kesamping (header atas) -->
+    <!-- ====================================== -->
+    <h4>Tabel Kesamping (Jadwal Harian)</h4>
+    <table border="3">
+        <tr>
+            <th>Senin</th>
+            <th>Selasa</th>
+        </tr>
+        <tr>
+            <td>10.00</td>
+            <td>10.00</td>
+        </tr>
+        <tr>
+            <td>11.00</td>
+            <td>11.00</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- ========================================================== -->
+    <!-- Tabel kombinasi: <rowspan> (gabung baris) dan <colspan>   -->
+    <!-- ========================================================== -->
+    <h4>Tabel dengan Rowspan & Colspan</h4>
+    <table border="3">
+        <tr>
+            <th></th>
+            <th>Senin</th>
+            <th>Selasa</th>
+        </tr>
+        <tr>
+            <th>08.00</th>
+            <td>Berangkat Sekolah</td>
+            <td>Lari Pagi</td>
+        </tr>
+        <tr>
+            <!-- Gabungkan 2 baris ke bawah untuk waktu 12.00 -->
+            <th rowspan="2">12.00</th>
+            <!-- Gabungkan 2 kolom ke samping -->
+            <td colspan="2">Makan Siang</td>
+        </tr>
+        <tr>
+            <td colspan="2">Sholat Dhuhur</td>
+        </tr>
+    </table>
+
+</body>
+</html>
