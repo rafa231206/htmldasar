@@ -3,450 +3,69 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dasar-Dasar HTML</title> <!-- Judul yang lebih deskriptif -->
+    <title>Dasar-Dasar HTML - Materi Lengkap</title> <!-- Judul yang lebih deskriptif -->
     <meta name="description" content="Dasar-Dasar HTML, HTML, dan kontak di sini.">
     <meta name="keywords" content="Dasar-Dasar HTML, HTML, belajar, programer">
     <meta name="author" content="Raihan Fahrel Akbar">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-
     <!-- Favicon -->
     <link rel="icon" href="img/icons/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/icons/favicon.ico" type="image/x-icon">
-    <!-- Untuk ikon yang lebih modern (misal: PNG) -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
 
-    <!-- Open Graph / Social Media Tags (Opsional, tapi bagus untuk sharing) -->
+    <!-- Open Graph / Social Media Tags -->
     <meta property="og:title" content="Dasar-Dasar HTML">
     <meta property="og:description" content="Temukan informasi Dasar-Dasar HTML di sini.">
-    <meta property="og:image" content="https://rafa231206.github.io/htmldasar/img/quality_restoration_20250330050655089.jpg"> <!-- Ganti dengan URL gambar profil Anda -->
-    <meta property="og:url" content="https://rafa231206.github.io/htmldasar/"> <!-- Ganti dengan URL website Anda -->
+    <meta property="og:image" content="https://rafa231206.github.io/htmldasar/img/quality_restoration_20250330050655089.jpg">
+    <meta property="og:url" content="https://rafa231206.github.io/htmldasar/">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card Tags (Opsional) -->
+    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dasar-Dasar HTML">
     <meta name="twitter:description" content="Temukan informasi, media sosial, dan kontak Raihan Fahrel Akbar (Rafa_2312) di sini.">
-    <meta name="twitter:image" content="https://rafa231206.github.io/htmldasar/img/quality_restoration_20250330050655089.jpg"> <!-- Ganti dengan URL gambar profil Anda -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Reset dan Dasar */
-        html, body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-            overflow-y: auto; /* Mencegah scroll default browser */
-            font-family: 'Fira Code', monospace;
-            transition: all 0.3s ease;
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            color: #e2e8f0;
-            line-height: 1.6;
-        }
+    <meta name="twitter:image" content="https://rafa231206.github.io/htmldasar/img/quality_restoration_20250330050655089.jpg">
 
-        /* Header */
-        header {
-            background-color: #1a202c; /* Warna solid untuk header */
-            color: #e2e8f0;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 1000;
-        }
-        .header-gradient {
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        /* Layout Utama */
-        .main-layout {
-            display: flex;
-            flex-grow: 1; /* Mengisi sisa tinggi yang tersedia */
-            overflow: hidden;
-        }
-
-        /* Sidebar (Daftar Isi) */
-        .sidebar {
-            flex: 0 0 280px;
-            background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
-            padding: 2rem 1.5rem;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            position: relative;
-            z-index: 900;
-            border-right: 1px solid rgba(113, 119, 144, 0.2);
-        }
-        .sidebar a {
-            display: flex;
-            align-items: center;
-            padding: 1rem 1.25rem;
-            margin-bottom: 0.75rem;
-            border-radius: 0.75rem;
-            color: #e2e8f0;
-            transition: all 0.3s ease;
-            background: rgba(74, 85, 104, 0.3);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .sidebar a {
-            display: flex;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            margin-bottom: 0.75rem;
-            border-radius: 12px;
-            color: #e2e8f0;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-            background: rgba(74, 85, 104, 0.2);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar a:hover {
-            background: rgba(74, 85, 104, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .sidebar a.active {
-            background: linear-gradient(90deg, #7c3aed 0%, #6d28d9 100%);
-            font-weight: 600;
-            color: white;
-            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
-            transform: scale(1.02);
-        }
-
-        .sidebar a.active::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 5px;
-            background: white;
-            border-radius: 5px 0 0 5px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
-
-        /* Konten Utama (Sections) */
-        .main-content-wrapper {
-            flex-grow: 1;
-            overflow: hidden;
-            position: relative;
-            display: flex; /* Menggunakan flexbox untuk menampung section */
-            justify-content: center; /* Pusatkan konten */
-            align-items: center; /* Pusatkan konten secara vertikal */
-            padding: 1rem; /* Padding di sekitar area konten */
-        }
-
-        .sections-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .content-section {
-            flex-shrink: 0;
-            width: 95%;
-            height: 95%;
-            padding: 2.5rem;
-            box-sizing: border-box;
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(26, 32, 44, 0.95));
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            border: 1px solid rgba(108, 122, 137, 0.2);
-            display: none;
-            backdrop-filter: blur(12px);
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform: scale(0.95) translateY(20px);
-            opacity: 0;
-        }
-
-        .content-section.active {
-            display: block;
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .content-section.active {
-            display: block; /* Tampilkan section yang aktif */
-        }
-
-        /* Styling Umum untuk Konten */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            color: transparent;
-            background-clip: text;
-            background-image: linear-gradient(90deg, #667eea, #9f7aea);
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #9f7aea);
-            border-radius: 2px;
-        }
-        .code-block {
-            background-color: #1a1e2b;
-            border-left: 4px solid #9f7aea;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            overflow-x: auto;
-            border-radius: 0.5rem;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .code-block:hover {
-            transform: translateX(-3px);
-            box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        .code-block code {
-            font-family: 'Fira Code', monospace;
-            color: #a0aec0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1rem;
-        }
-        th, td {
-            border: 1px solid #4a5568;
-            padding: 0.75rem;
-            text-align: left;
-        }
-        th {
-            background-color: #4a5568;
-            color: #e2e8f0;
-        }
-        ul, ol {
-            list-style-position: inside;
-            margin-bottom: 1rem;
-        }
-        ul li, ol li {
-            margin-bottom: 0.5rem;
-        }
-        dt {
-            font-weight: bold;
-            color: #667eea;
-            margin-top: 0.5rem;
-        }
-        dd {
-            margin-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        img, video, audio {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1rem 0;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        form {
-            background-color: #1a202c;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #a0aec0;
-        }
-        form input[type="text"],
-        form input[type="password"],
-        form input[type="email"],
-        form select,
-        form textarea,
-        form input[type="file"] {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            background-color: #2d3748;
-            border: 1px solid #4a5568;
-            border-radius: 0.375rem;
-            color: #e2e8f0;
-        }
-        form input[type="radio"],
-        form input[type="checkbox"] {
-            margin-right: 0.5rem;
-        }
-        form input[type="submit"],
-        form input[type="button"] {
-            background-color: #667eea;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 0.375rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        form input[type="submit"]:hover,
-        form input[type="button"]:hover {
-            background-color: #764ba2;
-        }
-        .original-file-link {
-            display: block;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #81e6d9;
-            text-decoration: underline;
-        }
-        .original-file-link:hover {
-            color: #4fd1c5;
-        }
-
-        .back-to-toc-btn {
-            background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
-            display: inline-flex;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
-        }
-
-        .back-to-toc-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(107, 70, 193, 0.4);
-            background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
-        }
-
-        .back-to-toc-btn:active {
-            transform: translateY(0);
-        }
-
-        .back-to-toc-btn::before {
-            content: '←';
-            margin-right: 0.5rem;
-            font-size: 1.1em;
-        }
-
-        @media (max-width: 768px) {
-
-            header {
-                padding: 1rem;
-                text-align: center;
-            }
-            .header-gradient {
-                font-size: 1.5rem;
-            }
-            .main-layout {
-                flex-direction: column;
-                height: auto;
-            }
-            .sidebar {
-                flex: none;
-                width: 100%;
-                max-height: 67vh;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-                background: linear-gradient(to bottom, #2d3748, #1a202c);
-                padding: 1.25rem;
-                transition: all 0.3s ease;
-            }
-            .main-content-wrapper {
-                height: calc(100vh - 80px - 1rem); /* Sesuaikan tinggi di mobile */
-                padding: 0.5rem;
-            }
-            .content-section {
-                width: 100%;
-                height: 100%;
-                padding: 1rem;
-                margin-bottom: 0; /* Tidak ada margin antar section karena hanya satu yang tampil */
-                border-radius: 0.5rem;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            .section-title {
-                font-size: 1.75rem;
-            }
-            .sidebar.hidden-mobile {
-                display: none;
-            }
-            .main-content-wrapper.full-width-mobile {
-                width: 100%;
-                flex-grow: 1;
-            }
-        }
-    </style>
-      <link rel="manifest" href="manifest.json">
-      <meta name="theme-color" content="#3498db">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3498db">
 </head>
 <body>
-
-    <header class="bg-gradient-to-r from-purple-900 to-blue-800 shadow-lg">
-        <div class="container mx-auto py-8 px-4 flex justify-center items-center">
-            <div class="text-center">
-                <h1 class="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 mb-2 animate-fade-in transition-all">
-                    HTML Dasar
-                </h1>
-                <p class="text-blue-100 text-lg mt-2 animate-fade-in delay-100">
-                    Panduan lengkap menguasai dasar HTML
-                </p>
-            </div>
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="main-title"><i class="fas fa-code"></i> Dasar-Dasar HTML</h1>
+            <p class="tagline" style="margin: 0.625rem auto;" >Panduan lengkap untuk memahami dasar-dasar HTML.</p>
+            <div class="header-decoration"></div>
         </div>
     </header>
 
-    <div class="main-layout">
-        <!-- Navigasi Sidebar (Daftar Isi) -->
-        <aside class="sidebar" id="sidebar-toc">
-            <h3 class="text-xl font-bold mb-4 text-white">Daftar Isi</h3>
-            <ul>
-                <li><a href="#" class="nav-link" data-target="introduction">Pendahuluan HTML</a></li>
-                <li><a href="#" class="nav-link" data-target="text-formatting">Format Teks</a></li>
-                <li><a href="#" class="nav-link" data-target="lists">Daftar (List)</a></li>
-                <li><a href="#" class="nav-link" data-target="links">Tautan (Link)</a></li>
-                <li><a href="#" class="nav-link" data-target="attributes">Atribut HTML</a></li>
-                <li><a href="#" class="nav-link" data-target="tables">Tabel</a></li>
-                <li><a href="#" class="nav-link" data-target="forms">Formulir</a></li>
-                <li><a href="#" class="nav-link" data-target="images">Gambar</a></li>
-                <li><a href="#" class="nav-link" data-target="video">Video</a></li>
-                <li><a href="#" class="nav-link" data-target="audio">Audio</a></li>
-                <li><a href="#" class="nav-link" data-target="multipage-example">Contoh Multipage</a></li>
-            </ul>
-        </aside>
+    <main class="content-container">
+        <h2 class="section-title">Daftar Isi</h2>
+        <section class="accordion-wrapper" aria-label="Daftar Materi Pembelajaran">
 
-        <!-- Area Konten Utama -->
-        <div class="main-content-wrapper" id="content-area">
-            <div class="sections-container">
-                <section id="introduction" class="content-section">
-                    <h2 class="section-title">1. Pendahuluan HTML</h2>
-                    <p>HTML (HyperText Markup Language) adalah bahasa markup standar untuk dokumen yang dirancang untuk ditampilkan di browser web. HTML dapat dibantu oleh teknologi seperti Cascading Style Sheets (CSS) dan bahasa scripting seperti JavaScript.</p>
-                    <p>Setiap dokumen HTML dimulai dengan <code>&lt;!DOCTYPE html&gt;</code> untuk mendeklarasikan tipe dokumen dan diapit dalam tag <code>&lt;html&gt;</code>.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;!DOCTYPE html&gt;
+            <!-- Bagian 1: Pendahuluan HTML -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-file-code icon-prefix"></i>1. Pendahuluan HTML <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Apa itu HTML? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>HTML (HyperText Markup Language) adalah bahasa markup standar untuk dokumen yang dirancang untuk ditampilkan di browser web. HTML dapat dibantu oleh teknologi seperti Cascading Style Sheets (CSS) dan bahasa scripting seperti JavaScript.</p>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Struktur Dasar HTML <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Setiap dokumen HTML dimulai dengan <code>&lt;!DOCTYPE html&gt;</code> untuk mendeklarasikan tipe dokumen dan diapit dalam tag <code>&lt;html&gt;</code>.</p>
+                            <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="id"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -457,38 +76,43 @@
     &lt;p&gt;Ini adalah struktur dasar HTML.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-                    </div>
-                    <p>Bagian <code>&lt;head&gt;</code> berisi meta-informasi tentang dokumen HTML, sedangkan bagian <code>&lt;body&gt;</code> berisi semua konten yang terlihat oleh pengguna.</p>
-                    <a href="web/1. HTML.html" target="_blank" class="original-file-link">Lihat file asli: 1. HTML.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+                            <p>Bagian <code>&lt;head&gt;</code> berisi meta-informasi tentang dokumen HTML, sedangkan bagian <code>&lt;body&gt;</code> berisi semua konten yang terlihat oleh pengguna.</p>
+                            <a href="web/1. HTML.html" target="_blank" class="original-file-link">Lihat file asli: 1. HTML.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                <section id="text-formatting" class="content-section">
-                    <h2 class="section-title">2. Format Teks dan Judul</h2>
-                    <p>HTML menyediakan berbagai tag untuk menyusun dan memformat teks konten, dari judul hingga elemen teks khusus.</p>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Judul (h1 hingga h6)</h3>
-                    <p>Judul mendefinisikan struktur konten Anda, dengan <code>&lt;h1&gt;</code> menjadi yang paling penting dan <code>&lt;h6&gt;</code> yang paling tidak penting.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;h1&gt;Judul Utama&lt;/h1&gt;
+            <!-- Bagian 2: Format Teks dan Judul -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-font icon-prefix"></i>2. Format Teks dan Judul <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Judul (h1 hingga h6) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Judul mendefinisikan struktur konten Anda, dengan <code>&lt;h1&gt;</code> menjadi yang paling penting dan <code>&lt;h6&gt;</code> yang paling tidak penting.</p>
+                            <pre><code>&lt;h1&gt;Judul Utama&lt;/h1&gt;
 &lt;h2&gt;Judul Bagian&lt;/h2&gt;
 &lt;h3&gt;Judul Sub-bagian&lt;/h3&gt;
 &lt;h4&gt;Judul Lebih Kecil&lt;/h4&gt;
 &lt;h5&gt;Judul Bahkan Lebih Kecil&lt;/h5&gt;
 &lt;h6&gt;Judul Paling Tidak Penting&lt;/h6&gt;</code></pre>
-                    </div>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Paragraf dan Pemformatan Dasar</h3>
-                    <p>Tag <code>&lt;p&gt;</code> mendefinisikan sebuah paragraf. Anda dapat menerapkan berbagai gaya:</p>
-                    <ul>
-                        <li><b>Teks tebal</b> menggunakan <code>&lt;b&gt;</code> atau <code>&lt;strong&gt;</code> (untuk kepentingan semantik).</li>
-                        <li><i>Teks miring</i> menggunakan <code>&lt;i&gt;</code> atau <code>&lt;em&gt;</code> (untuk penekanan semantik).</li>
-                        <li><u>Teks bergaris bawah</u> menggunakan <code>&lt;u&gt;</code>.</li>
-                        <li>Garis baru menggunakan <code>&lt;br&gt;</code>.</li>
-                        <li>Garis horizontal menggunakan <code>&lt;hr&gt;</code>.</li>
-                    </ul>
-                    <div class="code-block">
-                        <pre><code>&lt;p&gt;Ini adalah paragraf normal.&lt;/p&gt;
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Paragraf dan Pemformatan Dasar <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tag <code>&lt;p&gt;</code> mendefinisikan sebuah paragraf. Anda dapat menerapkan berbagai gaya:</p>
+                            <ul>
+                                <li><b>Teks tebal</b> menggunakan <code>&lt;b&gt;</code> atau <code>&lt;strong&gt;</code> (untuk kepentingan semantik).</li>
+                                <li><i>Teks miring</i> menggunakan <code>&lt;i&gt;</code> atau <code>&lt;em&gt;</code> (untuk penekanan semantik).</li>
+                                <li><u>Teks bergaris bawah</u> menggunakan <code>&lt;u&gt;</code>.</li>
+                                <li>Garis baru menggunakan <code>&lt;br&gt;</code>.</li>
+                                <li>Garis horizontal menggunakan <code>&lt;hr&gt;</code>.</li>
+                            </ul>
+                            <pre><code>&lt;p&gt;Ini adalah paragraf normal.&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;Teks ini tebal.&lt;/b&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i&gt;Teks ini miring.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;u&gt;Teks ini bergaris bawah.&lt;/u&gt;&lt;/p&gt;
@@ -496,85 +120,95 @@
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;Perhatian:&lt;/strong&gt; Teks ini penting.&lt;/p&gt;
 &lt;p&gt;Saya &lt;em&gt;sangat&lt;/em&gt; lapar.&lt;/p&gt;</code></pre>
-                    </div>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Superskrip dan Subskrip</h3>
-                    <p>Untuk rumus matematika atau kimia:</p>
-                    <ul>
-                        <li>Superskrip (misalnya, O<sup>2</sup>) menggunakan <code>&lt;sup&gt;</code>.</li>
-                        <li>Subskrip (misalnya, CO<sub>2</sub>) menggunakan <code>&lt;sub&gt;</code>.</li>
-                    </ul>
-                    <div class="code-block">
-                        <pre><code>&lt;p&gt;Oksigen: O&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Superskrip dan Subskrip <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Untuk rumus matematika atau kimia:</p>
+                            <ul>
+                                <li>Superskrip (misalnya, O<sup>2</sup>) menggunakan <code>&lt;sup&gt;</code>.</li>
+                                <li>Subskrip (misalnya, CO<sub>2</sub>) menggunakan <code>&lt;sub&gt;</code>.</li>
+                            </ul>
+                            <pre><code>&lt;p&gt;Oksigen: O&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;Karbon Dioksida: CO&lt;sub&gt;2&lt;/sub&gt;&lt;/p&gt;</code></pre>
-                    </div>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Kutipan</h3>
-                    <ul>
-                        <li>Kutipan panjang menggunakan <code>&lt;blockquote&gt;</code>.</li>
-                        <li>Kutipan singkat sebaris menggunakan <code>&lt;q&gt;</code>.</li>
-                    </ul>
-                    <div class="code-block">
-                        <pre><code>&lt;blockquote&gt;
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Kutipan <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Kutipan panjang menggunakan <code>&lt;blockquote&gt;</code>.</li>
+                                <li>Kutipan singkat sebaris menggunakan <code>&lt;q&gt;</code>.</li>
+                            </ul>
+                            <pre><code>&lt;blockquote&gt;
     &lt;i&gt;Sekali teman tetap teman.&lt;/i&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Kutipan favorit saya adalah &lt;q&gt;man jadda wa jadda&lt;/q&gt;.&lt;/p&gt;</code></pre>
-                    </div>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Singkatan dan Akronim</h3>
-                    <ul>
-                        <li>Singkatan menggunakan <code>&lt;abbr&gt;</code> (menampilkan tooltip saat kursor diarahkan).</li>
-                        <li>Akronim menggunakan <code>&lt;acronym&gt;</code> (mirip dengan abbr, untuk akronim yang dibaca sebagai kata).</li>
-                    </ul>
-                    <div class="code-block">
-                        <pre><code>&lt;p&gt;Saya sekolah &lt;abbr title="Sekolah Dasar"&gt;SD&lt;/abbr&gt;.&lt;/p&gt;
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Singkatan dan Akronim <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Singkatan menggunakan <code>&lt;abbr&gt;</code> (menampilkan tooltip saat kursor diarahkan).</li>
+                                <li>Akronim menggunakan <code>&lt;acronym&gt;</code> (mirip dengan abbr, untuk akronim yang dibaca sebagai kata).</li>
+                            </ul>
+                            <pre><code>&lt;p&gt;Saya sekolah &lt;abbr title="Sekolah Dasar"&gt;SD&lt;/abbr&gt;.&lt;/p&gt;
 &lt;p&gt;Saya kuliah di &lt;acronym title="Universitas Nurul Jadid"&gt;UNUJA&lt;/acronym&gt;.&lt;/p&gt;</code></pre>
-                    </div>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Referensi dan Definisi</h3>
-                    <ul>
-                        <li>Kutipan untuk karya (buku, film) menggunakan <code>&lt;cite&gt;</code>.</li>
-                        <li>Mendefinisikan istilah menggunakan <code>&lt;dfn&gt;</code>.</li>
-                    </ul>
-                    <div class="code-block">
-                        <pre><code>&lt;p&gt;Saya suka membaca buku &lt;cite&gt;harry potter&lt;/cite&gt;.&lt;/p&gt;
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Referensi dan Definisi <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Kutipan untuk karya (buku, film) menggunakan <code>&lt;cite&gt;</code>.</li>
+                                <li>Mendefinisikan istilah menggunakan <code>&lt;dfn&gt;</code>.</li>
+                            </ul>
+                            <pre><code>&lt;p&gt;Saya suka membaca buku &lt;cite&gt;harry potter&lt;/cite&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;dfn&gt;SD&lt;/dfn&gt; adalah singkatan dari sekolah dasar.&lt;/p&gt;</code></pre>
-                    </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Teks yang Dihapus dan Disisipkan <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Teks yang dihapus menggunakan <code>&lt;del&gt;</code> (biasanya dicoret).</li>
+                                <li>Teks yang disisipkan menggunakan <code>&lt;ins&gt;</code> (biasanya digarisbawahi).</li>
+                            </ul>
+                            <pre><code>&lt;p&gt;Saya suka &lt;del&gt;seblak&lt;/del&gt; &lt;ins&gt;mie ayam&lt;/ins&gt;.&lt;/p&gt;</code></pre>
+                            <a href="web/1. HTML.html" target="_blank" class="original-file-link">Lihat file asli: 1. HTML.html</a>
+                            <a href="web/latihan/latihan 1.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 1.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Teks yang Dihapus dan Disisipkan</h3>
-                    <ul>
-                        <li>Teks yang dihapus menggunakan <code>&lt;del&gt;</code> (biasanya dicoret).</li>
-                        <li>Teks yang disisipkan menggunakan <code>&lt;ins&gt;</code> (biasanya digarisbawahi).</li>
-                    </ul>
-                    <div class="code-block">
-                        <pre><code>&lt;p&gt;Saya suka &lt;del&gt;seblak&lt;/del&gt; &lt;ins&gt;mie ayam&lt;/ins&gt;.&lt;/p&gt;</code></pre>
-                    </div>
-                    <a href="web/1. HTML.html" target="_blank" class="original-file-link">Lihat file asli: 1. HTML.html</a>
-                    <a href="web/latihan/latihan 1.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 1.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
-
-                <section id="lists" class="content-section">
-                    <h2 class="section-title">3. Daftar (List)</h2>
-                    <p>HTML mendukung berbagai jenis daftar untuk mengatur konten.</p>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Daftar Berurutan (Ordered List - OL)</h3>
-                    <p>Item-item secara default diberi nomor.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;ol&gt;
+            <!-- Bagian 3: Daftar (List) -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-list icon-prefix"></i>3. Daftar (List) <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Daftar Berurutan (Ordered List - OL) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Item-item secara default diberi nomor.</p>
+                            <pre><code>&lt;ol&gt;
     &lt;li&gt;Denny Caknan&lt;/li&gt;
     &lt;li&gt;NDX AKA&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
-                    </div>
-                    <ol>
-                        <li>Denny Caknan</li>
-                        <li>NDX AKA</li>
-                    </ol>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Daftar Tidak Berurutan (Unordered List - UL)</h3>
-                    <p>Item-item secara default diberi tanda bullet. Dapat berisi daftar bersarang.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;ul&gt;
+                            <ol>
+                                <li>Denny Caknan</li>
+                                <li>NDX AKA</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Daftar Tidak Berurutan (Unordered List - UL) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Item-item secara default diberi tanda bullet. Dapat berisi daftar bersarang.</p>
+                            <pre><code>&lt;ul&gt;
     &lt;li&gt;Denny Caknan&lt;/li&gt;
     &lt;li&gt;NDX AKA
         &lt;!-- Daftar bersarang --&gt;
@@ -588,130 +222,150 @@
         &lt;/ol&gt;
     &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-                    </div>
-                    <ul>
-                        <li>Denny Caknan</li>
-                        <li>NDX AKA
                             <ul>
-                                <li>Sinarengan</li>
-                                <li>Sanes</li>
+                                <li>Denny Caknan</li>
+                                <li>NDX AKA
+                                    <ul>
+                                        <li>Sinarengan</li>
+                                        <li>Sanes</li>
+                                    </ul>
+                                    <ol>
+                                        <li>Sinarengan</li>
+                                        <li>Sanes</li>
+                                    </ol>
+                                </li>
                             </ul>
-                            <ol>
-                                <li>Sinarengan</li>
-                                <li>Sanes</li>
-                            </ol>
-                        </li>
-                    </ul>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Daftar Definisi (Definition List - DL)</h3>
-                    <p>Digunakan untuk istilah dan definisinya.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;dl&gt;
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Daftar Definisi (Definition List - DL) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Digunakan untuk istilah dan definisinya.</p>
+                            <pre><code>&lt;dl&gt;
     &lt;dt&gt;UNUJA&lt;/dt&gt;
     &lt;dd&gt;UNUJA adalah kampus yang ada di Pondok Pesantren Nurul Jadid.&lt;/dd&gt;
 &lt;/dl&gt;</code></pre>
-                    </div>
-                    <dl>
-                        <dt>UNUJA</dt>
-                        <dd>UNUJA adalah kampus yang ada di Pondok Pesantren Nurul Jadid.</dd>
-                    </dl>
-                    <a href="web/2. list.html" target="_blank" class="original-file-link">Lihat file asli: 2. list.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+                            <dl>
+                                <dt>UNUJA</dt>
+                                <dd>UNUJA adalah kampus yang ada di Pondok Pesantren Nurul Jadid.</dd>
+                            </dl>
+                            <a href="web/2. list.html" target="_blank" class="original-file-link">Lihat file asli: 2. list.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                <section id="links" class="content-section">
-                    <h2 class="section-title">4. Tautan (Hyperlink)</h2>
-                    <p>Tautan menghubungkan halaman web yang berbeda atau bagian dalam satu halaman menggunakan tag <code>&lt;a&gt;</code>.</p>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tautan Eksternal</h3>
-                    <p>Tautan ke situs web lain. Gunakan <code>target="_blank"</code> untuk membuka di tab baru.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;Google&lt;/a&gt;</code></pre>
-                    </div>
-                    <a href="https://www.google.com" target="_blank" class="text-blue-400 hover:underline">Google</a>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tautan Internal (Folder yang Sama)</h3>
-                    <p>Tautan ke file HTML lain dalam direktori yang sama.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;a href="list.html"&gt;Halaman List&lt;/a&gt;</code></pre>
-                    </div>
-                    <a href="#" class="text-blue-400 hover:underline" onclick="alert('Ini akan menautkan ke list.html dalam skenario nyata'); return false;">Halaman List (Contoh)</a>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tautan Email</h3>
-                    <p>Buat tautan untuk mengirim email.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;a href="mailto:akbarberdikari@gmail.com"&gt;Kirim Email ke Akbar&lt;/a&gt;</code></pre>
-                    </div>
-                    <a href="mailto:akbarberdikari@gmail.com" class="text-blue-400 hover:underline">Kirim Email ke Akbar</a>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tautan Jangkar (Dalam Halaman)</h3>
-                    <p>Tautan ke bagian tertentu di halaman yang sama menggunakan atribut <code>id</code>.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;h1 id="top-of-page"&gt;Atas Halaman&lt;/h1&gt;
+            <!-- Bagian 4: Tautan (Hyperlink) -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-link icon-prefix"></i>4. Tautan (Hyperlink) <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tautan Eksternal <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tautan ke situs web lain. Gunakan <code>target="_blank"</code> untuk membuka di tab baru.</p>
+                            <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;Google&lt;/a&gt;</code></pre>
+                            <a href="https://www.google.com" target="_blank" style="color: var(--primary-color-dark); text-decoration: underline;">Google</a>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tautan Internal (Folder yang Sama) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tautan ke file HTML lain dalam direktori yang sama.</p>
+                            <pre><code>&lt;a href="list.html"&gt;Halaman List&lt;/a&gt;</code></pre>
+                            <a href="#" style="color: var(--primary-color-dark); text-decoration: underline;" onclick="alert('Ini akan menautkan ke list.html dalam skenario nyata'); return false;">Halaman List (Contoh)</a>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tautan Email <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Buat tautan untuk mengirim email.</p>
+                            <pre><code>&lt;a href="mailto:akbarberdikari@gmail.com"&gt;Kirim Email ke Akbar&lt;/a&gt;</code></pre>
+                            <a href="mailto:akbarberdikari@gmail.com" style="color: var(--primary-color-dark); text-decoration: underline;">Kirim Email ke Akbar</a>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tautan Jangkar (Dalam Halaman) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tautan ke bagian tertentu di halaman yang sama menggunakan atribut <code>id</code>.</p>
+                            <pre><code>&lt;h1 id="top-of-page"&gt;Atas Halaman&lt;/h1&gt;
 &lt;a href="#top-of-page"&gt;Lompat ke Atas&lt;/a&gt;</code></pre>
-                    </div>
-                    <a href="#links" class="text-blue-400 hover:underline">Lompat ke Bagian Tautan</a>
+                            <a href="#links" style="color: var(--primary-color-dark); text-decoration: underline;">Lompat ke Bagian Tautan</a>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tautan ke File di Folder Lain <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tentukan jalur ke file.</p>
+                            <pre><code>&lt;a href="latihan/latihan 1.html"&gt;Halaman dalam Folder "latihan"&lt;/a&gt;</code></pre>
+                            <a href="#" style="color: var(--primary-color-dark); text-decoration: underline;" onclick="alert('Ini akan menautkan ke latihan/latihan 1.html dalam skenario nyata'); return false;">Halaman dalam Folder "latihan" (Contoh)</a>
+                            <a href="web/3. link.html" target="_blank" class="original-file-link">Lihat file asli: 3. link.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tautan ke File di Folder Lain</h3>
-                    <p>Tentukan jalur ke file.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;a href="latihan/latihan 1.html"&gt;Halaman dalam Folder "latihan"&lt;/a&gt;</code></pre>
-                    </div>
-                    <a href="#" class="text-blue-400 hover:underline" onclick="alert('Ini akan menautkan ke latihan/latihan 1.html dalam skenario nyata'); return false;">Halaman dalam Folder "latihan" (Contoh)</a>
-                    <a href="web/3. link.html" target="_blank" class="original-file-link">Lihat file asli: 3. link.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+            <!-- Bagian 5: Atribut HTML -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-tags icon-prefix"></i>5. Atribut HTML <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Atribut Umum <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Atribut memberikan informasi tambahan tentang elemen HTML. Atribut ditentukan dalam tag pembuka dan biasanya datang dalam pasangan nama/nilai seperti <code>nama="nilai"</code>.</p>
+                            <ul>
+                                <li><code>href</code>: Menentukan URL untuk tautan.</li>
+                                <li><code>align</code>: (Usang, gunakan CSS) Menentukan perataan konten.</li>
+                                <li><code>title</code>: Memberikan informasi tambahan tentang elemen (tooltip saat kursor diarahkan).</li>
+                                <li><code>src</code>: Menentukan jalur ke file gambar, video, atau audio.</li>
+                                <li><code>width</code>, <code>height</code>: Menentukan dimensi media.</li>
+                                <li><code>alt</code>: Memberikan teks alternatif untuk gambar (untuk aksesibilitas).</li>
+                                <li><code>controls</code>: Menambahkan kontrol pemutaran untuk media.</li>
+                                <li><code>autoplay</code>: Memulai pemutaran media secara otomatis.</li>
+                                <li><code>loop</code>: Mengulang pemutaran media.</li>
+                                <li><code>poster</code>: Menentukan gambar yang muncul sebelum video diputar.</li>
+                                <li><code>preload</code>: Menentukan apakah dan bagaimana browser harus memuat media saat halaman dimuat.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh Atribut <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <h3>Contoh: <code>href</code> dan <code>target</code></h3>
+                            <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;Kunjungi Google&lt;/a&gt;</code></pre>
+                            <a href="https://www.google.com" target="_blank" style="color: var(--primary-color-dark); text-decoration: underline;">Kunjungi Google</a>
 
-                <section id="attributes" class="content-section">
-                    <h2 class="section-title">5. Atribut HTML</h2>
-                    <p>Atribut memberikan informasi tambahan tentang elemen HTML. Atribut ditentukan dalam tag pembuka dan biasanya datang dalam pasangan nama/nilai seperti <code>nama="nilai"</code>.</p>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Atribut Umum</h3>
-                    <ul>
-                        <li><code>href</code>: Menentukan URL untuk tautan.</li>
-                        <li><code>align</code>: (Usang, gunakan CSS) Menentukan perataan konten.</li>
-                        <li><code>title</code>: Memberikan informasi tambahan tentang elemen (tooltip saat kursor diarahkan).</li>
-                        <li><code>src</code>: Menentukan jalur ke file gambar, video, atau audio.</li>
-                        <li><code>width</code>, <code>height</code>: Menentukan dimensi media.</li>
-                        <li><code>alt</code>: Memberikan teks alternatif untuk gambar (untuk aksesibilitas).</li>
-                        <li><code>controls</code>: Menambahkan kontrol pemutaran untuk media.</li>
-                        <li><code>autoplay</code>: Memulai pemutaran media secara otomatis.</li>
-                        <li><code>loop</code>: Mengulang pemutaran media.</li>
-                        <li><code>poster</code>: Menentukan gambar yang muncul sebelum video diputar.</li>
-                        <li><code>preload</code>: Menentukan apakah dan bagaimana browser harus memuat media saat halaman dimuat.</li>
-                    </ul>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Contoh: <code>href</code> dan <code>target</code></h3>
-                    <div class="code-block">
-                        <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;Kunjungi Google&lt;/a&gt;</code></pre>
-                    </div>
-                    <a href="https://www.google.com" target="_blank" class="text-blue-400 hover:underline">Kunjungi Google</a>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Contoh: <code>align</code> (Usang)</h3>
-                    <p>Meskipun <code>align</code> sudah usang, dulunya digunakan untuk perataan teks:</p>
-                    <div class="code-block">
-                        <pre><code>&lt;p align="center"&gt;(rata tengah) Lorem Ipsum...&lt;/p&gt;
+                            <h3>Contoh: <code>align</code> (Usang)</h3>
+                            <p>Meskipun <code>align</code> sudah usang, dulunya digunakan untuk perataan teks:</p>
+                            <pre><code>&lt;p align="center"&gt;(rata tengah) Lorem Ipsum...&lt;/p&gt;
 &lt;p align="right"&gt;(rata kanan) Lorem Ipsum...&lt;/p&gt;</code></pre>
-                    </div>
-                    <p class="text-center text-gray-400">(rata tengah) Lorem Ipsum adalah contoh teks standar dalam industri percetakan dan penataan huruf.</p>
-                    <p class="text-right text-gray-400">(rata kanan) Lorem Ipsum telah digunakan sejak tahun 1500-an.</p>
+                            <p style="text-align: center; color: var(--text-color-dark);">(rata tengah) Lorem Ipsum adalah contoh teks standar dalam industri percetakan dan penataan huruf.</p>
+                            <p style="text-align: right; color: var(--text-color-dark);">(rata kanan) Lorem Ipsum telah digunakan sejak tahun 1500-an.</p>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Contoh: <code>title</code></h3>
-                    <p>Singkatan: <abbr title="Sekolah Dasar" class="border-b border-dotted border-gray-400 cursor-help">SD</abbr></p>
-                    <div class="code-block">
-                        <pre><code>&lt;p&gt;Singkatan: &lt;abbr title="Sekolah Dasar"&gt;SD&lt;/abbr&gt;&lt;/p&gt;</code></pre>
-                    </div>
-                    <a href="web/4. atribute html.html" target="_blank" class="original-file-link">Lihat file asli: 4. atribute html.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+                            <h3>Contoh: <code>title</code></h3>
+                            <p>Singkatan: <abbr title="Sekolah Dasar" style="border-bottom: 1px dotted var(--text-color-dark); cursor: help;">SD</abbr></p>
+                            <pre><code>&lt;p&gt;Singkatan: &lt;abbr title="Sekolah Dasar"&gt;SD&lt;/abbr&gt;&lt;/p&gt;</code></pre>
+                            <a href="web/4. atribute html.html" target="_blank" class="original-file-link">Lihat file asli: 4. atribute html.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                <section id="tables" class="content-section">
-                    <h2 class="section-title">6. Tabel</h2>
+            <!-- Bagian 6: Tabel -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-table icon-prefix"></i>6. Tabel <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
                     <p>Tabel digunakan untuk menampilkan data dalam baris dan kolom. Tag utama meliputi <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (baris tabel), <code>&lt;td&gt;</code> (data tabel), dan <code>&lt;th&gt;</code> (header tabel).</p>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tabel Standar (Tanpa Header)</h3>
-                    <div class="code-block">
-                        <pre><code>&lt;table border="1"&gt;
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tabel Standar (Tanpa Header) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <pre><code>&lt;table border="1"&gt;
     &lt;tr&gt;
         &lt;td&gt;Raihan&lt;/td&gt;
         &lt;td&gt;Farel&lt;/td&gt;
@@ -723,23 +377,26 @@
         &lt;td&gt;Darungan&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
-                    </div>
-                    <table border="1">
-                        <tr>
-                            <td>Raihan</td>
-                            <td>Farel</td>
-                            <td>Akbar</td>
-                        </tr>
-                        <tr>
-                            <td>Yosowilangun</td>
-                            <td>Lumajang</td>
-                            <td>Darungan</td>
-                        </tr>
-                    </table>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tabel dengan Header (th)</h3>
-                    <div class="code-block">
-                        <pre><code>&lt;table border="2"&gt;
+                            <div class="table-responsive">
+                                <table border="1">
+                                    <tr>
+                                        <td>Raihan</td>
+                                        <td>Farel</td>
+                                        <td>Akbar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yosowilangun</td>
+                                        <td>Lumajang</td>
+                                        <td>Darungan</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tabel dengan Header (th) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <pre><code>&lt;table border="2"&gt;
     &lt;tr&gt;
         &lt;th&gt;Senin&lt;/th&gt;
         &lt;td&gt;10.00&lt;/td&gt;
@@ -751,23 +408,26 @@
         &lt;td&gt;12.00&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
-                    </div>
-                    <table border="2">
-                        <tr>
-                            <th>Senin</th>
-                            <td>10.00</td>
-                            <td>12.00</td>
-                        </tr>
-                        <tr>
-                            <th>Selasa</th>
-                            <td>10.00</td>
-                            <td>12.00</td>
-                        </tr>
-                    </table>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tabel dengan Header Atas</h3>
-                    <div class="code-block">
-                        <pre><code>&lt;table border="3"&gt;
+                            <div class="table-responsive">
+                                <table border="2">
+                                    <tr>
+                                        <th>Senin</th>
+                                        <td>10.00</td>
+                                        <td>12.00</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Selasa</th>
+                                        <td>10.00</td>
+                                        <td>12.00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tabel dengan Header Atas <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <pre><code>&lt;table border="3"&gt;
     &lt;tr&gt;
         &lt;th&gt;Senin&lt;/th&gt;
         &lt;th&gt;Selasa&lt;/th&gt;
@@ -781,26 +441,29 @@
         &lt;td&gt;11.00&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
-                    </div>
-                    <table border="3">
-                        <tr>
-                            <th>Senin</th>
-                            <th>Selasa</th>
-                        </tr>
-                        <tr>
-                            <td>10.00</td>
-                            <td>10.00</td>
-                        </tr>
-                        <tr>
-                            <td>11.00</td>
-                            <td>11.00</td>
-                        </tr>
-                    </table>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Tabel dengan <code>rowspan</code> dan <code>colspan</code></h3>
-                    <p><code>rowspan</code> menggabungkan sel secara vertikal, dan <code>colspan</code> menggabungkan sel secara horizontal.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;table border="3"&gt;
+                            <div class="table-responsive">
+                                <table border="3">
+                                    <tr>
+                                        <th>Senin</th>
+                                        <th>Selasa</th>
+                                    </tr>
+                                    <tr>
+                                        <td>10.00</td>
+                                        <td>10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11.00</td>
+                                        <td>11.00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tabel dengan <code>rowspan</code> dan <code>colspan</code> <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p><code>rowspan</code> menggabungkan sel secara vertikal, dan <code>colspan</code> menggabungkan sel secara horizontal.</p>
+                            <pre><code>&lt;table border="3"&gt;
     &lt;tr&gt;
         &lt;th&gt;&lt;/th&gt;
         &lt;th&gt;Senin&lt;/th&gt;
@@ -819,37 +482,45 @@
         &lt;td colspan="2"&gt;Sholat Dhuhur&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
-                    </div>
-                    <table border="3">
-                        <tr>
-                            <th></th>
-                            <th>Senin</th>
-                            <th>Selasa</th>
-                        </tr>
-                        <tr>
-                            <th>08.00</th>
-                            <td>Berangkat Sekolah</td>
-                            <td>Lari Pagi</td>
-                        </tr>
-                        <tr>
-                            <th rowspan="2">12.00</th>
-                            <td colspan="2">Makan Siang</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Sholat Dhuhur</td>
-                        </tr>
-                    </table>
-                    <a href="web/5. tabel.html" target="_blank" class="original-file-link">Lihat file asli: 5. tabel.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+                            <div class="table-responsive">
+                                <table border="3">
+                                    <tr>
+                                        <th></th>
+                                        <th>Senin</th>
+                                        <th>Selasa</th>
+                                    </tr>
+                                    <tr>
+                                        <th>08.00</th>
+                                        <td>Berangkat Sekolah</td>
+                                        <td>Lari Pagi</td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">12.00</th>
+                                        <td colspan="2">Makan Siang</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Sholat Dhuhur</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <a href="web/5. tabel.html" target="_blank" class="original-file-link">Lihat file asli: 5. tabel.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                <section id="forms" class="content-section">
-                    <h2 class="section-title">7. Formulir</h2>
+            <!-- Bagian 7: Formulir -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-wpforms icon-prefix"></i>7. Formulir <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
                     <p>Formulir HTML digunakan untuk mengumpulkan masukan pengguna. Elemen <code>&lt;form&gt;</code> adalah wadah untuk berbagai elemen masukan.</p>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Contoh Formulir Pendaftaran</h3>
-                    <div class="code-block">
-                        <pre><code>&lt;form action="proses.php" method="post"&gt;
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh Formulir Pendaftaran <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <pre><code>&lt;form action="proses.php" method="post"&gt;
     &lt;label for="nama_depan"&gt;Nama Depan:&lt;/label&gt;
     &lt;input type="text" id="nama_depan" name="nama_depan"&gt;&lt;br&gt;&lt;br&gt;
 
@@ -881,84 +552,96 @@
 
     &lt;input type="submit" value="Kirim"&gt;
 &lt;/form&gt;</code></pre>
-                    </div>
-                    <form action="#" method="post" onsubmit="alert('Formulir terkirim (contoh)'); return false;">
-                        <label for="nama_depan_form">Nama Depan:</label>
-                        <input type="text" id="nama_depan_form" name="nama_depan">
+                            <form action="#" method="post" onsubmit="alert('Formulir terkirim (contoh)'); return false;">
+                                <label for="nama_depan_form">Nama Depan:</label>
+                                <input type="text" id="nama_depan_form" name="nama_depan">
 
-                        <label for="nama_belakang_form">Nama Belakang:</label>
-                        <input type="text" id="nama_belakang_form" name="nama_belakang">
+                                <label for="nama_belakang_form">Nama Belakang:</label>
+                                <input type="text" id="nama_belakang_form" name="nama_belakang">
 
-                        <label for="password_form">Password:</label>
-                        <input type="password" id="password_form" name="password">
+                                <label for="password_form">Password:</label>
+                                <input type="password" id="password_form" name="password">
 
-                        <h4 class="text-white mt-4 mb-2">Apakah Anda WNI?</h4>
-                        <input type="radio" id="wni_yes_form" name="wni" value="yes">
-                        <label for="wni_yes_form">Ya</label><br>
-                        <input type="radio" id="wni_no_form" name="wni" value="no">
-                        <label for="wni_no_form">Tidak</label><br>
+                                <h4 style="color: var(--text-color-dark); margin-top: 1rem; margin-bottom: 0.5rem;">Apakah Anda WNI?</h4>
+                                <input type="radio" id="wni_yes_form" name="wni" value="yes">
+                                <label for="wni_yes_form">Ya</label><br>
+                                <input type="radio" id="wni_no_form" name="wni" value="no">
+                                <label for="wni_no_form">Tidak</label><br>
 
-                        <h4 class="text-white mt-4 mb-2">Musik Favorit:</h4>
-                        <input type="checkbox" id="musik_ndx_form" name="musik[]" value="NDX">
-                        <label for="musik_ndx_form">NDX</label><br>
-                        <input type="checkbox" id="musik_denny_form" name="musik[]" value="DENNY">
-                        <label for="musik_denny_form">DENNY</label><br>
+                                <h4 style="color: var(--text-color-dark); margin-top: 1rem; margin-bottom: 0.5rem;">Musik Favorit:</h4>
+                                <input type="checkbox" id="musik_ndx_form" name="musik[]" value="NDX">
+                                <label for="musik_ndx_form">NDX</label><br>
+                                <input type="checkbox" id="musik_denny_form" name="musik[]" value="DENNY">
+                                <label for="musik_denny_form">DENNY</label><br>
 
-                        <h4 class="text-white mt-4 mb-2">Pilih Pekerjaan:</h4>
-                        <select name="pekerjaan" id="pekerjaan_form">
-                            <option value="mahasiswa">Mahasiswa</option>
-                            <option value="pelajar">Pelajar</option>
-                            <option value="karyawan">Karyawan</option>
-                            <option value="lainnya">Lainnya</option>
-                        </select>
+                                <h4 style="color: var(--text-color-dark); margin-top: 1rem; margin-bottom: 0.5rem;">Pilih Pekerjaan:</h4>
+                                <select name="pekerjaan" id="pekerjaan_form">
+                                    <option value="mahasiswa">Mahasiswa</option>
+                                    <option value="pelajar">Pelajar</option>
+                                    <option value="karyawan">Karyawan</option>
+                                    <option value="lainnya">Lainnya</option>
+                                </select>
 
-                        <h4 class="text-white mt-4 mb-2">Upload Foto:</h4>
-                        <input type="file" name="foto" id="foto_form">
+                                <h4 style="color: var(--text-color-dark); margin-top: 1rem; margin-bottom: 0.5rem;">Upload Foto:</h4>
+                                <input type="file" name="foto" id="foto_form">
 
-                        <input type="submit" value="Kirim">
-                    </form>
-                    <a href="web/6. form.html" target="_blank" class="original-file-link">Lihat file asli: 6. form.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+                                <input type="submit" value="Kirim" style="background-color: var(--primary-color-dark); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; cursor: pointer; transition: background-color 0.2s ease;">
+                            </form>
+                            <a href="web/6. form.html" target="_blank" class="original-file-link">Lihat file asli: 6. form.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                <section id="images" class="content-section">
-                    <h2 class="section-title">8. Gambar</h2>
+            <!-- Bagian 8: Gambar -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-image icon-prefix"></i>8. Gambar <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
                     <p>Tag <code>&lt;img&gt;</code> digunakan untuk menyematkan gambar di halaman HTML. Ini membutuhkan atribut <code>src</code> (sumber) dan <code>alt</code> (teks alternatif).</p>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Menampilkan Gambar</h3>
-                    <div class="code-block">
-                        <pre><code>&lt;img src="img/instagram_logo_icon_168715.png" height="100px" width="100px" alt="instagram" title="logo instagram"&gt;</code></pre>
-                    </div>
-                    <img src="web/img/instagram_logo_icon_168715.png" height="100px" width="100px" alt="instagram" title="logo instagram">
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Gambar dalam Teks (Perataan - Usang)</h3>
-                    <p>Meskipun <code>align</code> sudah usang, dulunya digunakan untuk mengapungkan gambar di dalam teks.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;p&gt;
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Menampilkan Gambar <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <pre><code>&lt;img src="img/instagram_logo_icon_168715.png" height="100px" width="100px" alt="instagram" title="logo instagram"&gt;</code></pre>
+                            <img src="web/img/instagram_logo_icon_168715.png" height="100px" width="100px" alt="instagram" title="logo instagram">
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Gambar dalam Teks (Perataan - Usang) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Meskipun <code>align</code> sudah usang, dulunya digunakan untuk mengapungkan gambar di dalam teks.</p>
+                            <pre><code>&lt;p&gt;
     &lt;img src="img/instagram_logo_icon_168715.png" height="100px" width="100px" alt="instagram" align="left"&gt;
     Ini adalah paragraf dengan gambar yang sejajar ke kiri.
 &lt;/p&gt;</code></pre>
-                    </div>
-                    <p>
-                        <img src="web/img/instagram_logo_icon_168715.png" height="100px" width="100px" alt="instagram" title="logo instagram" style="float: left; margin-right: 10px;">
-                        Ini adalah paragraf dengan gambar yang sejajar ke kiri menggunakan gaya sebaris untuk demonstrasi (atribut <code>align</code> sudah usang). Teks akan mengalir di sekitarnya.
-                    </p>
-                    <div style="clear: both;"></div>
+                            <p>
+                                <img src="web/img/instagram_logo_icon_168715.png" height="100px" width="100px" alt="instagram" title="logo instagram" style="float: left; margin-right: 10px;">
+                                Ini adalah paragraf dengan gambar yang sejajar ke kiri menggunakan gaya sebaris untuk demonstrasi (atribut <code>align</code> sudah usang). Teks akan mengalir di sekitarnya.
+                            </p>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Gambar Lebar Penuh <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <pre><code>&lt;img src="img/media_social_tiktok_icon_124256.png" alt="Tiktok" width="100%"&gt;</code></pre>
+                            <img src="web/img/media_social_tiktok_icon_124256.png" alt="Tiktok" width="100%">
+                            <a href="web/7. images.html" target="_blank" class="original-file-link">Lihat file asli: 7. images.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Gambar Lebar Penuh</h3>
-                    <div class="code-block">
-                        <pre><code>&lt;img src="img/media_social_tiktok_icon_124256.png" alt="Tiktok" width="100%"&gt;</code></pre>
-                    </div>
-                    <img src="web/img/media_social_tiktok_icon_124256.png" alt="Tiktok" width="100%">
-                    <a href="web/7. images.html" target="_blank" class="original-file-link">Lihat file asli: 7. images.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
-
-                <section id="video" class="content-section">
-                    <h2 class="section-title">9. Video</h2>
+            <!-- Bagian 9: Video -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-video icon-prefix"></i>9. Video <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
                     <p>Tag <code>&lt;video&gt;</code> digunakan untuk menyematkan konten video. Atribut umum meliputi <code>src</code>, <code>controls</code>, <code>autoplay</code>, <code>loop</code>, <code>poster</code>, dan <code>preload</code>.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;video
+                    <pre><code>&lt;video
     src="img/lv_7300184189909945607_20240404052751.mp4"
     poster="img/media_social_tiktok_icon_124256.png"
     width="100%"
@@ -968,7 +651,6 @@
     loop&gt;
     Browser Anda tidak mendukung tag video.
 &lt;/video&gt;</code></pre>
-                    </div>
                     <video
                         src="web/img/lv_7300184189909945607_20240404052751.mp4"
                         poster="web/img/media_social_tiktok_icon_124256.png"
@@ -978,16 +660,19 @@
                         loop>
                         Browser Anda tidak mendukung tag video.
                     </video>
-                    <p class="text-sm text-gray-400">Catatan: Autoplay sering diblokir oleh browser untuk pengalaman pengguna. Teks "Browser Anda tidak mendukung tag video." muncul jika browser tidak dapat memutar video.</p>
+                    <p class="text-sm" style="color: var(--text-color-dark);">Catatan: Autoplay sering diblokir oleh browser untuk pengalaman pengguna. Teks "Browser Anda tidak mendukung tag video." muncul jika browser tidak dapat memutar video.</p>
                     <a href="web/8. video.html" target="_blank" class="original-file-link">Lihat file asli: 8. video.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+                </div>
+            </details>
 
-                <section id="audio" class="content-section">
-                    <h2 class="section-title">10. Audio</h2>
+            <!-- Bagian 10: Audio -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-music icon-prefix"></i>10. Audio <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
                     <p>Tag <code>&lt;audio&gt;</code> digunakan untuk menyematkan konten audio. Atributnya mirip dengan video: <code>src</code>, <code>controls</code>, <code>autoplay</code>, <code>loop</code>, dan <code>preload</code>.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;audio
+                    <pre><code>&lt;audio
     src="web/img/KUTO KARANGANYAR TENTREM ADEM AYEM BUMI SUROKARTO - SOUND TIKTOK VIRAL 2025 [bVtGILl5nro].mp3"
     controls
     autoplay
@@ -995,7 +680,6 @@
     loop&gt;
     Browser Anda tidak mendukung elemen audio.
 &lt;/audio&gt;</code></pre>
-                    </div>
                     <audio
                         src="web/img/KUTO KARANGANYAR TENTREM ADEM AYEM BUMI SUROKARTO - SOUND TIKTOK VIRAL 2025 [bVtGILl5nro].mp3"
                         controls
@@ -1003,45 +687,51 @@
                         loop>
                         Browser Anda tidak mendukung elemen audio.
                     </audio>
-                    <p class="text-sm text-gray-400">Catatan: Autoplay mungkin diblokir. Teks "Browser Anda tidak mendukung elemen audio." muncul jika browser tidak dapat memutar audio.</p>
+                    <p class="text-sm" style="color: var(--text-color-dark);">Catatan: Autoplay mungkin diblokir. Teks "Browser Anda tidak mendukung elemen audio." muncul jika browser tidak dapat memutar audio.</p>
                     <a href="web/9. suara.html" target="_blank" class="original-file-link">Lihat file asli: 9. suara.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
+                </div>
+            </details>
 
-                <section id="multipage-example" class="content-section">
-                    <h2 class="section-title">11. Contoh Website Multipage (Perpustakaan Lumajang)</h2>
+            <!-- Bagian 11: Contoh Website Multipage (Perpustakaan Lumajang) -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-sitemap icon-prefix"></i>11. Contoh Website Multipage <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
                     <p>Bagian ini menunjukkan bagaimana beberapa file HTML dapat dihubungkan bersama untuk membentuk situs web yang lengkap, menggunakan contoh "Perpustakaan Kabupaten Lumajang".</p>
 
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Ikhtisar Struktur</h3>
-                    <p>Situs multipage yang khas menggunakan struktur navigasi yang konsisten di semua halaman.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;!-- Navigasi Umum --&gt;
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Ikhtisar Struktur <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Situs multipage yang khas menggunakan struktur navigasi yang konsisten di semua halaman.</p>
+                            <pre><code>&lt;!-- Navigasi Umum --&gt;
 &lt;h4&gt;Halaman web:&lt;/h4&gt;
 &lt;ul&gt;
     &lt;li&gt;&lt;a href="index.html"&gt;Beranda&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="buku.html"&gt;Daftar Buku&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="kontak.html"&gt;Kontak&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-                    </div>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Contoh: Beranda (index.html)</h3>
-                    <p>Halaman utama, menyambut pengguna.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;h1&gt;Perpustakaan Kabupaten Lumajang&lt;/h1&gt;
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh: Beranda (index.html) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Halaman utama, menyambut pengguna.</p>
+                            <pre><code>&lt;h1&gt;Perpustakaan Kabupaten Lumajang&lt;/h1&gt;
 &lt;hr&gt;
 &lt;!-- Navigasi di sini --&gt;
 &lt;h1&gt;Beranda&lt;/h1&gt;
 &lt;h2&gt;Selamat datang di Perpustakaan Daerah Kabupaten Lumajang&lt;/h2&gt;
 &lt;p&gt;Perpustakaan diperuntukkan untuk siapa saja yang ingin membaca buku-buku populer seputar sains,fiksi dan ilmu sosial&lt;/p&gt;</code></pre>
-                    </div>
-                    <a href="web/latihan/latihan 2/index.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 2/index.html</a>
-                    <a href="web/latihan/latihan 3/index.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 3/index.html</a>
-
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Contoh: Daftar Buku (buku.html)</h3>
-                    <p>Halaman yang menampilkan daftar buku dalam tabel, termasuk sampul buku.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;h1&gt;Daftar buku&lt;/h1&gt;
+                            <a href="web/latihan/latihan 2/index.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 2/index.html</a>
+                            <a href="web/latihan/latihan 3/index.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 3/index.html</a>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh: Daftar Buku (buku.html) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Halaman yang menampilkan daftar buku dalam tabel, termasuk sampul buku.</p>
+                            <pre><code>&lt;h1&gt;Daftar buku&lt;/h1&gt;
 &lt;table border="1px"&gt;
     &lt;tr&gt;
         &lt;th&gt;No&lt;/th&gt;
@@ -1059,45 +749,48 @@
     &lt;/tr&gt;
     &lt;!-- Baris lainnya --&gt;
 &lt;/table&gt;</code></pre>
-                    </div>
-                    <h4 class="text-white mt-4 mb-2">Daftar Buku (Simulasi)</h4>
-                    <table border="1px">
-                        <tr>
-                            <th>No</th>
-                            <th>Cover</th>
-                            <th>Judul</th>
-                            <th>Penulis</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><img src="web/latihan/latihan 3/img/bumi-manusia.jpg" alt="bumi-manusia" width="100px"></td>
-                            <td>Bumi Manusia</td>
-                            <td>Pramoedya Ananta Toer</td>
-                            <td>Dipinjam</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><img src="web/latihan/latihan 3/img/rectoverso.jpg" alt="rectoverso" width="100px"></td>
-                            <td>Rectoverso</td>
-                            <td>Dee Lestari</td>
-                            <td>Dipinjam</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><img src="web/latihan/latihan 3/img/at-taisir.jpg" alt="at-taisir" width="100px"></td>
-                            <td>At-Taisir</td>
-                            <td>Adi Hidayat</td>
-                            <td>Dipinjam</td>
-                        </tr>
-                    </table>
-                    <a href="web/latihan/latihan 2/buku.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 2/buku.html</a>
-                    <a href="web/latihan/latihan 3/buku.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 3/buku.html</a>
-
-                    <h3 class="text-xl font-bold mt-6 mb-2 text-white">Contoh: Kontak (kontak.html)</h3>
-                    <p>Halaman kontak dengan formulir untuk pertanyaan pengguna.</p>
-                    <div class="code-block">
-                        <pre><code>&lt;h1&gt;Kontak&lt;/h1&gt;
+                            <h4 style="color: var(--text-color-dark); margin-top: 1rem; margin-bottom: 0.5rem;">Daftar Buku (Simulasi)</h4>
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Cover</th>
+                                        <th>Judul</th>
+                                        <th>Penulis</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><img src="web/latihan/latihan 3/img/bumi-manusia.jpg" alt="bumi-manusia" width="100px"></td>
+                                        <td>Bumi Manusia</td>
+                                        <td>Pramoedya Ananta Toer</td>
+                                        <td>Dipinjam</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><img src="web/latihan/latihan 3/img/rectoverso.jpg" alt="rectoverso" width="100px"></td>
+                                        <td>Rectoverso</td>
+                                        <td>Dee Lestari</td>
+                                        <td>Dipinjam</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><img src="web/latihan/latihan 3/img/at-taisir.jpg" alt="at-taisir" width="100px"></td>
+                                        <td>At-Taisir</td>
+                                        <td>Adi Hidayat</td>
+                                        <td>Dipinjam</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <a href="web/latihan/latihan 2/buku.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 2/buku.html</a>
+                            <a href="web/latihan/latihan 3/buku.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 3/buku.html</a>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh: Kontak (kontak.html) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Halaman kontak dengan formulir untuk pertanyaan pengguna.</p>
+                            <pre><code>&lt;h1&gt;Kontak&lt;/h1&gt;
 &lt;form&gt;
     &lt;label for="name"&gt;Nama&lt;/label&gt;&lt;br&gt;
     &lt;input type="text" id="name"&gt;&lt;br&gt;
@@ -1105,109 +798,38 @@
     &lt;textarea name="tanya" id="tanya" cols="50" rows="10"&gt;&lt;/textarea&gt;&lt;br&gt;
     &lt;input type="button" value="submit"&gt;
 &lt;/form&gt;</code></pre>
-                    </div>
-                    <h4 class="text-white mt-4 mb-2">Kontak (Simulasi)</h4>
-                    <form action="#" onsubmit="alert('Formulir kontak terkirim (contoh)'); return false;">
-                        <label for="contact_name_form">Nama</label>
-                        <input type="text" id="contact_name_form">
-                        <label for="contact_question_form">Pertanyaan</label>
-                        <textarea name="contact_question" id="contact_question_form" cols="30" rows="5"></textarea>
-                        <input type="button" value="Kirim">
-                    </form>
-                    <a href="web/latihan/latihan 2/kontak.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 2/kontak.html</a>
-                    <a href="web/latihan/latihan 3/kontak.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 3/kontak.html</a>
-                    <button class="back-to-toc-btn" onclick="showTableOfContents()">Kembali ke Daftar Isi</button>
-                </section>
-            </div>
-        </div>
-    </div>
+                            <h4 style="color: var(--text-color-dark); margin-top: 1rem; margin-bottom: 0.5rem;">Kontak (Simulasi)</h4>
+                            <form action="#" onsubmit="alert('Formulir kontak terkirim (contoh)'); return false;">
+                                <label for="contact_name_form">Nama</label>
+                                <input type="text" id="contact_name_form">
+                                <label for="contact_question_form">Pertanyaan</label>
+                                <textarea name="contact_question" id="contact_question_form" cols="30" rows="5"></textarea>
+                                <input type="button" value="Kirim" style="background-color: var(--primary-color-dark); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; cursor: pointer; transition: background-color 0.2s ease;">
+                            </form>
+                            <a href="web/latihan/latihan 2/kontak.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 2/kontak.html</a>
+                            <a href="web/latihan/latihan 3/kontak.html" target="_blank" class="original-file-link">Lihat file asli: latihan/latihan 3/kontak.html</a>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
-    <footer class="bg-gray-900 text-gray-400 py-4 text-center shadow-inner">
-        <div class="container">
-            <p>&copy; 2025 Dasar-Dasar HTML. Dibuat oleh Raihan Fahrel Akbar <i class="fas fa-code text-blue-400"></i>.</p>
-            <p class="text-sm mt-1">Semua konten berasal dari file HTML yang disediakan.</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-text">Dibuat oleh <span class="author-name">Raihan Fahrel Akbar</span> &copy; 2025</p>
+            <div class="footer-decoration"></div>
         </div>
     </footer>
+    
     <button id="installBtn" style="display: none;">Install Aplikasi</button>
-    <script>
-        const sidebarToc = document.getElementById('sidebar-toc');
-        const contentArea = document.getElementById('content-area');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const contentSections = document.querySelectorAll('.content-section');
-
-        // Fungsi untuk menampilkan konten berdasarkan ID
-        function showContent(id) {
-            // Sembunyikan semua section konten
-            contentSections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Tampilkan section yang diminta
-            const targetSection = document.getElementById(id);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                // Sembunyikan sidebar dan buat area konten utama menjadi full-width
-                sidebarToc.classList.add('hidden-mobile');
-                contentArea.classList.add('full-width-mobile');
-            }
-        }
-
-        // Fungsi untuk menampilkan daftar isi
-        function showTableOfContents() {
-            // Sembunyikan semua section konten
-            contentSections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Tampilkan sidebar dan kembalikan area konten utama ke lebar normal
-            sidebarToc.classList.remove('hidden-mobile');
-            contentArea.classList.remove('full-width-mobile');
-        }
-
-        // Event listener untuk setiap tautan navigasi
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Mencegah perilaku default tautan
-                const targetId = this.getAttribute('data-target');
-                showContent(targetId);
-            });
-        });
-
-        // Inisialisasi: Pastikan hanya daftar isi yang terlihat saat pertama kali dimuat
-        document.addEventListener('DOMContentLoaded', () => {
-            showTableOfContents();
-        });
-
-        // PWA related code (tetap dipertahankan)
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('service-worker.js')
-              .then(registration => {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-              })
-              .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
-              });
-          });
-        }
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-          e.preventDefault();
-          deferredPrompt = e;
-        
-          const installBtn = document.getElementById('installBtn');
-          installBtn.style.display = 'block';
-        
-          installBtn.addEventListener('click', () => {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then(choice => {
-              if (choice.outcome === 'accepted') {
-                console.log('PWA installed');
-              }
-              deferredPrompt = null;
-            });
-          });
+    <script src="script.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
         });
     </script>
 </body>
